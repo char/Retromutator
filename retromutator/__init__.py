@@ -30,7 +30,7 @@ class InputSequence:
 
     def __getitem__(self, key):
         return self.items[key]
-    
+
     def __iter__(self):
         yield from self.items
 
@@ -71,9 +71,9 @@ def invert(mutator, sequence_len):
 
         for index, mutated_item in enumerate(analysis_out_seq):
             out_seq[mutated_item.orig_index] = invert_operations(mutated_item.operations_applied, in_seq[index])
-        
+
         return out_seq
-    
+
     return retromutator
 
 def find(mutator, target):
@@ -85,5 +85,5 @@ def __coerce(result):
     # Quality of life: If all the values in 'result' are characters, we can transform the result into a string:
     if all([type(item) is str and len(item) == 1] for item in result):
         return "".join(result)
-    
+
     return result

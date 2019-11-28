@@ -13,7 +13,7 @@ public class Vault {
         for (; i < 16; i++) {
             buffer[i] = password.charAt(23 - i);
         }
-        
+
         for (; i < 32; i += 2) {
             buffer[i] = password.charAt(46 - i);
         }
@@ -40,13 +40,13 @@ import retromutator
 def transform_password(in_seq, out_seq):
     for i in range(8):
         out_seq[i] = in_seq[i]
-    
+
     for i in range(8, 16):
         out_seq[i] = in_seq[23 - i]
-    
+
     for i in range(16, 32, 2):
         out_seq[i] = in_seq[46 - i]
-    
+
     for i in range(31, 16, -2):
         out_seq[i] = in_seq[i]
 
