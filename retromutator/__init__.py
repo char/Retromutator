@@ -57,9 +57,9 @@ def invert_operations(operations, initial):
     return value
 
 def run(mutator, in_seq):
-    out_seq = [item for item in in_seq]
-    mutator(in_seq, out_seq)
-    return out_seq
+    result = [item for item in in_seq]
+    mutator(in_seq, result)
+    return __coerce(result)
 
 def invert(mutator, sequence_len):
     analysis_in_seq = InputSequence(sequence_len)
@@ -79,6 +79,9 @@ def invert(mutator, sequence_len):
 def find(mutator, target):
     result = invert(mutator, len(target))(target)
 
+    return __coerce(result)
+
+def __coerce(result):
     # Quality of life: If all the values in 'result' are characters, we can transform the result into a string:
     if all([type(item) is str and len(item) == 1] for item in result):
         return "".join(result)

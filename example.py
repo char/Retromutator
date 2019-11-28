@@ -16,6 +16,6 @@ def caesar_shift_3(in_seq, out_seq):
         out_seq[i] = ops.chr(ops.add(3) (ops.ord(in_seq[i])))
 
 # >>> retromutator.run(caesar_shift_3, "Hello, world!")
-# ['K', 'h', 'o', 'o', 'r', '/', '#', 'z', 'r', 'u', 'o', 'g', '$']
-# >>> retromutator.find(caesar_shift_3, ['K', 'h', 'o', 'o', 'r', '/', '#', 'z', 'r', 'u', 'o', 'g', '$'])
-# ['H', 'e', 'l', 'l', 'o', ',', ' ', 'w', 'o', 'r', 'l', 'd', '!']
+# 'Khoor/#zruog$'
+# >>> retromutator.find(caesar_shift_3, 'Khoor/#zruog$')
+# 'Hello, world!'
